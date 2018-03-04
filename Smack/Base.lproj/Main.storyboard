@@ -309,6 +309,9 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="createAccPressed:" destination="bMg-0g-ZFS" eventType="touchUpInside" id="UFR-Lg-N89"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="By8-5b-qJ8">
                                 <rect key="frame" x="62" y="143" width="250" height="139"/>
@@ -387,21 +390,23 @@
                                     <constraint firstAttribute="height" constant="100" id="v2o-R2-tbT"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVJ-st-cOc">
+                                <rect key="frame" x="90" y="456" width="196" height="30"/>
+                                <state key="normal" title="Generate background colour"/>
+                                <connections>
+                                    <action selector="backgroundPressed:" destination="bMg-0g-ZFS" eventType="touchUpInside" id="s5L-II-1o1"/>
+                                    <action selector="createAccountPressed:" destination="s1x-pk-zfm" eventType="touchUpInside" id="nz8-XE-Zp8"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnI-1R-3r0">
-                                <rect key="frame" x="137.5" y="322" width="100" height="130"/>
+                                <rect key="frame" x="137" y="322" width="100" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="dxq-4A-E8o"/>
                                 </constraints>
                                 <state key="normal" title="Choose avatar"/>
                                 <connections>
+                                    <action selector="chooseAvatarPress:" destination="bMg-0g-ZFS" eventType="touchUpInside" id="CuN-mm-BGK"/>
                                     <action selector="createAccountPressed:" destination="s1x-pk-zfm" eventType="touchUpInside" id="e2o-7H-NGu"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVJ-st-cOc">
-                                <rect key="frame" x="90" y="456" width="196" height="30"/>
-                                <state key="normal" title="Generate background colour"/>
-                                <connections>
-                                    <action selector="createAccountPressed:" destination="s1x-pk-zfm" eventType="touchUpInside" id="nz8-XE-Zp8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -426,6 +431,10 @@
                         <viewLayoutGuide key="safeArea" id="Ies-FA-bzB"/>
                     </view>
                     <connections>
+                        <outlet property="avatarPic" destination="gj9-UK-G0Z" id="ssw-IO-VlY"/>
+                        <outlet property="emailText" destination="xIN-sj-Qqm" id="TIj-0j-Qa5"/>
+                        <outlet property="passwordText" destination="RyC-8S-UCe" id="EgL-fC-WPV"/>
+                        <outlet property="usernameText" destination="Xma-eT-nbn" id="sTK-IS-hgT"/>
                         <segue destination="BL2-TG-NvE" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="tip-Bt-SVE"/>
                     </connections>
                 </viewController>

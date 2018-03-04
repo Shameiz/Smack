@@ -10,12 +10,36 @@ import UIKit
 
 class CreateAccountVC: UIViewController {
 
+    @IBOutlet weak var avatarPic: UIImageView!
+    @IBOutlet weak var usernameText: UITextField!
+    @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var passwordText: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func backgroundPressed(_ sender: Any) {
+    }
+    @IBAction func chooseAvatarPress(_ sender: Any) {
+    }
+    @IBAction func createAccPressed(_ sender: Any) {
+        guard let email = emailText.text, emailText.text != "" else{return}
+        guard let pass = passwordText.text, passwordText.text != "" else{return}
+        AuthService.instance.registerUser(email: email, password: pass){
+            (success) in
+            if(success){
+                AuthService.instance.loginUser(email: email, password: pass){
+                    (success) in
+                    if(success){
+                        print("Looged in User", AuthService.instance.authToken)
+                    }
+                }
+            }
+        }
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
