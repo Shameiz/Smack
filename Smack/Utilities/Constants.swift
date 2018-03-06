@@ -14,6 +14,7 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 let BASE_URL = "https://chattychatchat24.herokuapp.com/v1/"
 let URL_REGISTER = "\(BASE_URL)account/register"
 let URL_LOGIN = "\(BASE_URL)account/login"
+let ADD_USER = "\(BASE_URL)user/add"
 
 //Segues
 let TO_LOGIN = "toLogin"
