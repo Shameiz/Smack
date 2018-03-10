@@ -21,6 +21,9 @@ let TO_LOGIN = "toLogin"
 let TO_CREATE_ACCOUNT = "toCreateAccount"
 let UNWIND_TO_CHANNEL = "unwindToChannel"
 
+//Notification Constants
+let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
+
 //User Defaults
 let TOKEN_KEY = "token"
 let LOGGED_IN_KEY = "loggedIn"

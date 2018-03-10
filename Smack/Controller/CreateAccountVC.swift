@@ -43,6 +43,7 @@ class CreateAccountVC: UIViewController {
                             if(success){
                                 print(UserDataService.instance.name,UserDataService.instance.avatarName)
                                 self.performSegue(withIdentifier: UNWIND_TO_CHANNEL, sender: nil)
+                                NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
                             }
                         })
                     }

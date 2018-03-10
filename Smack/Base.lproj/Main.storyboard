@@ -103,6 +103,10 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="EDF-dB-PL0">
                                 <rect key="frame" x="24" y="527" width="99" height="99"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="99" id="KLz-ax-t2F"/>
+                                    <constraint firstAttribute="width" constant="99" id="ly7-zG-Tmo"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ket-A0-PAA">
                                 <rect key="frame" x="281" y="77" width="22" height="22"/>
@@ -164,6 +168,7 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="rH6-w6-wBc" id="qpu-ak-5mI"/>
+                        <outlet property="userImg" destination="EDF-dB-PL0" id="uEP-Js-lMs"/>
                         <segue destination="s1x-pk-zfm" kind="show" identifier="toLogin" id="Vai-oR-86G"/>
                     </connections>
                 </viewController>

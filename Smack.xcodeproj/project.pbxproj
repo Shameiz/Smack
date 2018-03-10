@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5122954120538D2300A02989 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122953F20538D2300A02989 /* ProfileVC.swift */; };
+		5122954220538D2300A02989 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5122954020538D2300A02989 /* ProfileVC.xib */; };
 		51738EBA2041E0EE00A509F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51738EB92041E0EE00A509F3 /* AppDelegate.swift */; };
 		51738EBF2041E0EE00A509F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51738EBD2041E0EE00A509F3 /* Main.storyboard */; };
 		51738EC12041E0EE00A509F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51738EC02041E0EE00A509F3 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5122953F20538D2300A02989 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		5122954020538D2300A02989 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		51738EB62041E0EE00A509F3 /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51738EB92041E0EE00A509F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51738EBE2041E0EE00A509F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,6 +71,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5122954320538D4800A02989 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				5122954020538D2300A02989 /* ProfileVC.xib */,
+			);
+			path = XIBs;
+			sourceTree = "<group>";
+		};
 		51738EAD2041E0ED00A509F3 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +101,7 @@
 		51738EB82041E0EE00A509F3 /* Smack */ = {
 			isa = PBXGroup;
 			children = (
+				5122954320538D4800A02989 /* XIBs */,
 				51738EEF204B24FF00A509F3 /* Services */,
 				51738EE72046605900A509F3 /* Utilities */,
 				51738ED220435CE200A509F3 /* Model */,
@@ -120,6 +133,7 @@
 				51738ED520435D3200A509F3 /* ChannelVC.swift */,
 				51738EEA2046675F00A509F3 /* LoginVC.swift */,
 				51738EEC2049078700A509F3 /* CreateAccountVC.swift */,
+				5122953F20538D2300A02989 /* ProfileVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -227,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5122954220538D2300A02989 /* ProfileVC.xib in Resources */,
 				51738EC42041E0EE00A509F3 /* LaunchScreen.storyboard in Resources */,
 				51738EC12041E0EE00A509F3 /* Assets.xcassets in Resources */,
 				51738EBF2041E0EE00A509F3 /* Main.storyboard in Resources */,
@@ -309,6 +324,7 @@
 				51738EF3204E490B00A509F3 /* UserDataService.swift in Sources */,
 				51738ED620435D3200A509F3 /* ChannelVC.swift in Sources */,
 				51738EE32043B8CB00A509F3 /* SWRevealViewController.m in Sources */,
+				5122954120538D2300A02989 /* ProfileVC.swift in Sources */,
 				51738EE9204660A200A509F3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
