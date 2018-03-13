@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5122954120538D2300A02989 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122953F20538D2300A02989 /* ProfileVC.swift */; };
 		5122954220538D2300A02989 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5122954020538D2300A02989 /* ProfileVC.xib */; };
+		5124C16220577B52000EA08A /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5124C16120577B52000EA08A /* MessageService.swift */; };
+		5124C16420577B98000EA08A /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5124C16320577B98000EA08A /* Channel.swift */; };
 		51738EBA2041E0EE00A509F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51738EB92041E0EE00A509F3 /* AppDelegate.swift */; };
 		51738EBF2041E0EE00A509F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51738EBD2041E0EE00A509F3 /* Main.storyboard */; };
 		51738EC12041E0EE00A509F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51738EC02041E0EE00A509F3 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 /* Begin PBXFileReference section */
 		5122953F20538D2300A02989 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		5122954020538D2300A02989 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
+		5124C16120577B52000EA08A /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		5124C16320577B98000EA08A /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		51738EB62041E0EE00A509F3 /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51738EB92041E0EE00A509F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51738EBE2041E0EE00A509F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 		51738ED220435CE200A509F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5124C16320577B98000EA08A /* Channel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 			children = (
 				51738EF0204B252E00A509F3 /* AuthService.swift */,
 				51738EF2204E490A00A509F3 /* UserDataService.swift */,
+				5124C16120577B52000EA08A /* MessageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -316,7 +322,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				51738ED420435D2100A509F3 /* ChatVC.swift in Sources */,
+				5124C16220577B52000EA08A /* MessageService.swift in Sources */,
 				51738EBA2041E0EE00A509F3 /* AppDelegate.swift in Sources */,
+				5124C16420577B98000EA08A /* Channel.swift in Sources */,
 				51738EED2049078700A509F3 /* CreateAccountVC.swift in Sources */,
 				51738EF1204B252E00A509F3 /* AuthService.swift in Sources */,
 				51738EEB2046675F00A509F3 /* LoginVC.swift in Sources */,
