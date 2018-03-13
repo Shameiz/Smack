@@ -25,6 +25,10 @@ class ChannelVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        setUpUserInfo();
+    }
+    
 
     @IBAction func loginBtnActn(_ sender: Any) {
         if(AuthService.instance.isLoggedIn){
@@ -38,6 +42,10 @@ class ChannelVC: UIViewController {
     }
     
     @objc func userDataDidChange(_ notif: Notification){
+        setUpUserInfo();
+    }
+    
+    func setUpUserInfo(){
         if(AuthService.instance.isLoggedIn){
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)
             //userImg.image = UIImage(named: UserDataService.instance.avatarName)
