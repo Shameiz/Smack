@@ -32,7 +32,12 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         setUpUserInfo();
     }
     
-
+    @IBAction func addChannel(_ sender: Any) {
+        let addch = AddChannelVC()
+        addch.modalPresentationStyle = .custom
+        present(addch, animated: true, completion: nil)
+    }
+    
     @IBAction func loginBtnActn(_ sender: Any) {
         if(AuthService.instance.isLoggedIn){
             let profile=ProfileVC()
