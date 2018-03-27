@@ -65,11 +65,32 @@
                                     <constraint firstItem="pwJ-OM-x1e" firstAttribute="leading" secondItem="rxz-l8-hdW" secondAttribute="leading" constant="12" id="upW-b4-2fh"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DGy-qp-N2H">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="klB-Ob-U5a"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhq-eC-tun">
+                                <rect key="frame" x="337" y="632" width="30" height="30"/>
+                                <state key="normal" image="send"/>
+                                <connections>
+                                    <action selector="sendMsgPressed:" destination="rbq-dK-C4T" eventType="touchUpInside" id="2km-ip-1bd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rxz-l8-hdW" firstAttribute="leading" secondItem="uG2-MZ-ulX" secondAttribute="leading" id="3q5-fT-Wls"/>
+                            <constraint firstItem="uG2-MZ-ulX" firstAttribute="trailing" secondItem="Rhq-eC-tun" secondAttribute="trailing" constant="8" id="8os-BM-Xsz"/>
+                            <constraint firstItem="Rhq-eC-tun" firstAttribute="centerY" secondItem="DGy-qp-N2H" secondAttribute="centerY" id="OGe-CI-zIz"/>
+                            <constraint firstItem="DGy-qp-N2H" firstAttribute="bottom" secondItem="uG2-MZ-ulX" secondAttribute="bottom" id="SK5-LR-0cl"/>
+                            <constraint firstItem="DGy-qp-N2H" firstAttribute="leading" secondItem="uG2-MZ-ulX" secondAttribute="leading" id="Si8-yT-LM7"/>
                             <constraint firstItem="uG2-MZ-ulX" firstAttribute="trailing" secondItem="rxz-l8-hdW" secondAttribute="trailing" id="UHI-cF-PTs"/>
+                            <constraint firstItem="uG2-MZ-ulX" firstAttribute="trailing" secondItem="DGy-qp-N2H" secondAttribute="trailing" id="fZ8-HR-reF"/>
                             <constraint firstItem="rxz-l8-hdW" firstAttribute="top" secondItem="jS1-h5-elF" secondAttribute="top" id="wKN-2n-5zp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uG2-MZ-ulX"/>
@@ -77,6 +98,7 @@
                     <connections>
                         <outlet property="channelName" destination="J1C-wG-nvZ" id="Ybe-pp-r9m"/>
                         <outlet property="hamburger" destination="pwJ-OM-x1e" id="UNt-7A-LdL"/>
+                        <outlet property="msgTxtBox" destination="DGy-qp-N2H" id="WOG-rz-tUT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BP9-w0-uHA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -138,7 +160,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="#general" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbN-XB-0zb">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="#general" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbN-XB-0zb">
                                                     <rect key="frame" x="15" y="12" width="68" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -148,6 +170,7 @@
                                             <constraints>
                                                 <constraint firstItem="LbN-XB-0zb" firstAttribute="leading" secondItem="WYM-ZQ-gB8" secondAttribute="leadingMargin" constant="5" id="Vyl-fl-v6v"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="LbN-XB-0zb" secondAttribute="trailing" id="skd-as-33j"/>
+                                                <constraint firstItem="LbN-XB-0zb" firstAttribute="bottom" secondItem="WYM-ZQ-gB8" secondAttribute="bottomMargin" id="wc5-Jw-aWf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -478,6 +501,7 @@
         <image name="closeButton" width="28" height="28"/>
         <image name="menuProfileIcon" width="99" height="99"/>
         <image name="profileDefault" width="192" height="192"/>
+        <image name="send" width="30" height="30"/>
         <image name="smackBurger" width="40" height="40"/>
         <image name="smackLogo" width="48" height="40"/>
     </resources>

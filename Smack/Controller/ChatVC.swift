@@ -14,11 +14,15 @@ class ChatVC: UIViewController {
     @IBOutlet weak var channelName: UILabel!
     
     
+    @IBOutlet weak var msgTxtBox: UITextField!
     
     @IBOutlet weak var hamburger: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.bindToKeyboard()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ChatVC.handleTap))
+        view.addGestureRecognizer(tap)
         hamburger.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
@@ -46,19 +50,51 @@ class ChatVC: UIViewController {
         updateWithChannel()
     }
     
+    @objc func handleTap(){
+        view.endEditing(true)
+    }
+    
     func updateWithChannel(){
         let channel = MessageService.instance.selectedChannel?.channelTitle ?? ""
         channelName.text = "#\(channel)";
+        self.getMessages()
     }
     
     func onLoginGetMessages(){
         MessageService.instance.findAllChannels { (success) in
             if(success){
-                //do stuff with channels
+                if(MessageService.instance.channels.count>0){
+                    MessageService.instance.selectedChannel=MessageService.instance.channels[0]
+                    self.updateWithChannel()
+                }
+                else{
+                    self.channelName.text="No Channels Yet"
+                }
             }
         }
     }
     
+  
+    func getMessages(){
+        guard let channelId = MessageService.instance.selectedChannel?.id else{return}
+        MessageService.instance.findAllMessagesForChannel(channelId: channelId) { (success) in
+            
+        }
+    }
+    
+    @IBAction func sendMsgPressed(_ sender: Any) {
+        if(AuthService.instance.isLoggedIn){
+            guard let channelId = MessageService.instance.selectedChannel?.id else{return}
+            guard let msg = msgTxtBox.text else{return}
+            SocketService.instance.addMessage(messageBody: msg, userId: UserDataService.instance.id, channelId: channelId, completion: { (success) in
+                if(success){
+                    self.msgTxtBox.text=""
+                    self.msgTxtBox.resignFirstResponder()
+                }
+            })
+        }
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

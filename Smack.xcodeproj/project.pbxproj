@@ -28,6 +28,8 @@
 		51738EED2049078700A509F3 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51738EEC2049078700A509F3 /* CreateAccountVC.swift */; };
 		51738EF1204B252E00A509F3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51738EF0204B252E00A509F3 /* AuthService.swift */; };
 		51738EF3204E490B00A509F3 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51738EF2204E490A00A509F3 /* UserDataService.swift */; };
+		51A753182066A81000BB4F80 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A753172066A81000BB4F80 /* Message.swift */; };
+		51A7531A2069F12000BB4F80 /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A753192069F12000BB4F80 /* KeyboardBoundView.swift */; };
 		E15E7CE7E4986D1D2306E197 /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBF5A6A629A30E0C8B7D65D /* Pods_Smack.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		51738EEC2049078700A509F3 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		51738EF0204B252E00A509F3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		51738EF2204E490A00A509F3 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		51A753172066A81000BB4F80 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		51A753192069F12000BB4F80 /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
 		68EB861FEFA8DC1DCE76C832 /* Pods-Smack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.release.xcconfig"; sourceTree = "<group>"; };
 		BEBF5A6A629A30E0C8B7D65D /* Pods_Smack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEE3BA67E6FDFFAA88167DE /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 		51738ED120435CDC00A509F3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				51A753192069F12000BB4F80 /* KeyboardBoundView.swift */,
 				51738EE52044FBA900A509F3 /* GradientView.swift */,
 				5124C165205A1A19000EA08A /* ChannelCell.swift */,
 			);
@@ -165,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				5124C16320577B98000EA08A /* Channel.swift */,
+				51A753172066A81000BB4F80 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 				51738ED420435D2100A509F3 /* ChatVC.swift in Sources */,
 				5124C16220577B52000EA08A /* MessageService.swift in Sources */,
 				51738EBA2041E0EE00A509F3 /* AppDelegate.swift in Sources */,
+				51A753182066A81000BB4F80 /* Message.swift in Sources */,
 				5124C16420577B98000EA08A /* Channel.swift in Sources */,
 				51738EED2049078700A509F3 /* CreateAccountVC.swift in Sources */,
 				51738EF1204B252E00A509F3 /* AuthService.swift in Sources */,
@@ -347,6 +354,7 @@
 				51738EF3204E490B00A509F3 /* UserDataService.swift in Sources */,
 				51738ED620435D3200A509F3 /* ChannelVC.swift in Sources */,
 				51738EE32043B8CB00A509F3 /* SWRevealViewController.m in Sources */,
+				51A7531A2069F12000BB4F80 /* KeyboardBoundView.swift in Sources */,
 				5124C166205A1A19000EA08A /* ChannelCell.swift in Sources */,
 				5122954120538D2300A02989 /* ProfileVC.swift in Sources */,
 				51738EE9204660A200A509F3 /* Constants.swift in Sources */,

@@ -17,6 +17,8 @@ let URL_LOGIN = "\(BASE_URL)account/login"
 let ADD_USER = "\(BASE_URL)user/add"
 let USER_BY_EMAIL = "\(BASE_URL)user/byEmail/"
 let GET_CHANNELS = "\(BASE_URL)channel/"
+let GET_MESSAGES = "\(BASE_URL)message/byChannel/"
+
 
 //Segues
 let TO_LOGIN = "toLogin"
