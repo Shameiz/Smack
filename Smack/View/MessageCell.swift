@@ -22,8 +22,22 @@ class MessageCell: UITableViewCell {
     func configureCell(message:Message){
         self.message.text=message.message;
         self.name.text=message.username;
-        self.time.text=message.timestamp;
         self.imgLbl.image=UIImage(named: message.userAvatar)
+        
+        guard var isoDate=message.timestamp else {return}
+        let end = isoDate.index(isoDate.endIndex, offsetBy: -5)
+        isoDate=isoDate.substring(to: end)
+        
+        let isoFormatter = ISO8601DateFormatter()
+        let chatDate=isoFormatter.date(from: isoDate.appending("Z"))
+        
+        let newFormatter=DateFormatter()
+        newFormatter.dateFormat = "MMM d, h:mm a"
+        
+        if let finalDate=chatDate{
+            let finalDate=newFormatter.string(from: finalDate)
+            self.time.text=finalDate;
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
