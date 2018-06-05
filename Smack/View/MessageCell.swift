@@ -9,15 +9,27 @@
 import UIKit
 
 class MessageCell: UITableViewCell {
+    
+    //IBOutlets and actions
     @IBOutlet weak var imgLbl: UIImageView!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var message: UILabel!
     
     @IBOutlet weak var name: UILabel!
+    
+    //override functions
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
+    //class functions
     
     func configureCell(message:Message){
         self.message.text=message.message;
@@ -38,12 +50,6 @@ class MessageCell: UITableViewCell {
             let finalDate=newFormatter.string(from: finalDate)
             self.time.text=finalDate;
         }
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

@@ -10,7 +10,11 @@ import UIKit
 
 class ChannelCell: UITableViewCell {
 
+    
+    //IBOutlets and functions
     @IBOutlet weak var channelLabel: UILabel!
+    
+    //override functions
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,12 +30,14 @@ class ChannelCell: UITableViewCell {
         }
     }
     
+    //class functions
+    
     func configureCell(channel:Channel){
         let title = channel.channelTitle ?? ""
         channelLabel.text="#\(title)";
         
     }
-        // Configure the view for the selected state
+        
 }
 
 

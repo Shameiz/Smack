@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -530,10 +530,15 @@
                                     <action selector="createAccountPressed:" destination="s1x-pk-zfm" eventType="touchUpInside" id="e2o-7H-NGu"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="wxz-pW-kq6">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.3411764706" green="0.1529411765" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jnI-1R-3r0" firstAttribute="top" secondItem="gj9-UK-G0Z" secondAttribute="top" id="68D-D1-AzH"/>
+                            <constraint firstItem="wxz-pW-kq6" firstAttribute="centerX" secondItem="xFi-Gp-QgR" secondAttribute="centerX" id="7Rj-vY-A5p"/>
                             <constraint firstItem="RlZ-72-10F" firstAttribute="centerX" secondItem="xFi-Gp-QgR" secondAttribute="centerX" id="A8i-DK-Kdb"/>
                             <constraint firstItem="By8-5b-qJ8" firstAttribute="centerX" secondItem="xFi-Gp-QgR" secondAttribute="centerX" id="Bwi-Nb-kqn"/>
                             <constraint firstItem="dQq-rQ-0im" firstAttribute="top" secondItem="Ies-FA-bzB" secondAttribute="top" constant="60" id="Ir8-To-D25"/>
@@ -543,6 +548,7 @@
                             <constraint firstItem="jnI-1R-3r0" firstAttribute="centerX" secondItem="xFi-Gp-QgR" secondAttribute="centerX" id="XAH-Rz-2JT"/>
                             <constraint firstItem="XVJ-st-cOc" firstAttribute="centerX" secondItem="xFi-Gp-QgR" secondAttribute="centerX" id="bbA-3k-hZc"/>
                             <constraint firstItem="dQq-rQ-0im" firstAttribute="centerX" secondItem="xFi-Gp-QgR" secondAttribute="centerX" id="eip-dA-JgZ"/>
+                            <constraint firstItem="wxz-pW-kq6" firstAttribute="centerY" secondItem="xFi-Gp-QgR" secondAttribute="centerY" constant="-100" id="gmF-Pu-cGD"/>
                             <constraint firstItem="Ies-FA-bzB" firstAttribute="trailing" secondItem="Lgv-io-es0" secondAttribute="trailing" constant="16" id="gnI-sq-bW6"/>
                             <constraint firstItem="gj9-UK-G0Z" firstAttribute="centerX" secondItem="xFi-Gp-QgR" secondAttribute="centerX" id="h8E-sh-7L5"/>
                             <constraint firstItem="Lgv-io-es0" firstAttribute="top" secondItem="Ies-FA-bzB" secondAttribute="top" constant="11" id="lP5-o9-9LC"/>
@@ -555,6 +561,7 @@
                         <outlet property="avatarPic" destination="gj9-UK-G0Z" id="ssw-IO-VlY"/>
                         <outlet property="emailText" destination="xIN-sj-Qqm" id="TIj-0j-Qa5"/>
                         <outlet property="passwordText" destination="RyC-8S-UCe" id="EgL-fC-WPV"/>
+                        <outlet property="spinner" destination="wxz-pW-kq6" id="Feb-Em-Guj"/>
                         <outlet property="usernameText" destination="Xma-eT-nbn" id="sTK-IS-hgT"/>
                         <segue destination="BL2-TG-NvE" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="tip-Bt-SVE"/>
                     </connections>

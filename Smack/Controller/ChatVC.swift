@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ChatVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ChatVC: UIViewController {
 
-    //IBOUTLETS
+    //IBOUTLETS and outlets
     @IBOutlet weak var channelName: UILabel!
     
     
@@ -21,8 +21,38 @@ class ChatVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var sendBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func sendMsgPressed(_ sender: Any) {
+        if(AuthService.instance.isLoggedIn){
+            guard let channelId = MessageService.instance.selectedChannel?.id else{return}
+            guard let msg = msgTxtBox.text else{return}
+            SocketService.instance.addMessage(messageBody: msg, userId: UserDataService.instance.id, channelId: channelId, completion: { (success) in
+                if(success){
+                    self.msgTxtBox.text=""
+                    self.msgTxtBox.resignFirstResponder()
+                }
+            })
+        }
+        
+    }
+    
+    @IBAction func messageBoxEditing(_ sender: Any) {
+        if(msgTxtBox.text==""){
+            isTyping=false;
+            sendBtn.isHidden=true;
+        }else{
+            sendBtn.isHidden=false;
+            isTyping=true;
+        }
+    }
+    
     //VARS
     var isTyping = false;
+    
+    //override functions
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +74,9 @@ class ChatVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                 NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
             })
         }
+        else{
+            channelName.text="Please Log In";
+        }
         SocketService.instance.getChatMessage { (success) in
             if(success){
                 self.tableView.reloadData()
@@ -53,27 +86,9 @@ class ChatVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                 }
             }
         }
-        // Do any additional setup after loading the view.
     }
     
-    @objc func userDataDidChange(_ notif: Notification){
-        if(AuthService.instance.isLoggedIn){
-            onLoginGetMessages()
-        }
-        else{
-            channelName.text="Please Log In";
-            self.tableView.reloadData()
-        }
-        
-    }
-    
-    @objc func channelSelected(_ notif:Notification){
-        updateWithChannel()
-    }
-    
-    @objc func handleTap(){
-        view.endEditing(true)
-    }
+    //class functions
     
     func updateWithChannel(){
         let channel = MessageService.instance.selectedChannel?.channelTitle ?? ""
@@ -95,7 +110,7 @@ class ChatVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         }
     }
     
-  
+    
     func getMessages(){
         guard let channelId = MessageService.instance.selectedChannel?.id else{return}
         MessageService.instance.findAllMessagesForChannel(channelId: channelId) { (success) in
@@ -105,52 +120,25 @@ class ChatVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         }
     }
     
-    @IBAction func sendMsgPressed(_ sender: Any) {
+    //objc functions
+    
+    @objc func userDataDidChange(_ notif: Notification){
         if(AuthService.instance.isLoggedIn){
-            guard let channelId = MessageService.instance.selectedChannel?.id else{return}
-            guard let msg = msgTxtBox.text else{return}
-            SocketService.instance.addMessage(messageBody: msg, userId: UserDataService.instance.id, channelId: channelId, completion: { (success) in
-                if(success){
-                    self.msgTxtBox.text=""
-                    self.msgTxtBox.resignFirstResponder()
-                }
-            })
+            onLoginGetMessages()
+        }
+        else{
+            channelName.text="Please Log In";
+            self.tableView.reloadData()
         }
         
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @objc func channelSelected(_ notif:Notification){
+        updateWithChannel()
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell=tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as? MessageCell{
-            let message=MessageService.instance.messages[indexPath.row];
-            cell.configureCell(message: message)
-            return cell;
-        }
-        else{
-            return UITableViewCell();
-        }
+    @objc func handleTap(){
+        view.endEditing(true)
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1;
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MessageService.instance.messages.count;
-    }
-    
-    @IBAction func messageBoxEditing(_ sender: Any) {
-        if(msgTxtBox.text==""){
-            isTyping=false;
-            sendBtn.isHidden=true;
-        }else{
-            sendBtn.isHidden=false;
-            isTyping=true;
-        }
-    }
-    
-
 }

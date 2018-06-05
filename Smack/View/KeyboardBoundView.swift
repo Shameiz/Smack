@@ -1,6 +1,6 @@
 //
 //  KeyboardBoundView.swift
-//  SmackAlpha
+//  
 //
 //  Created by Jonny B on 7/11/17.
 //  Copyright © 2017 Jonny B. All rights reserved.

@@ -9,21 +9,12 @@
 import UIKit
 
 class AddChannelVC: UIViewController {
-
+    
+    //IBOutlets and actions
     @IBOutlet weak var name: UITextField!
  
     @IBOutlet weak var bgview: UIView!
     @IBOutlet weak var channelDesc: UITextField!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupview()
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func createChannel(_ sender: Any) {
         guard let channelName = name.text, name.text != "" else{return}
@@ -39,22 +30,28 @@ class AddChannelVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    //override functions
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupview()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    //class functions
+    
     func setupview(){
         let closetouch = UITapGestureRecognizer(target: self, action: #selector(AddChannelVC.closeTap(_:)))
         bgview.addGestureRecognizer(closetouch)
     }
     
+    //objc functions
+    
     @objc func closeTap(_ recognizer:UITapGestureRecognizer){
         dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+ 
 }

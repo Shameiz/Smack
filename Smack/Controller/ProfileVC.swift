@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileVC: UIViewController {
 
-    //outlets
+    //IBoutlets and actions
     
     @IBOutlet weak var profileImg: UIImageView!
     
@@ -18,20 +18,6 @@ class ProfileVC: UIViewController {
     
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var bgView: UIView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        username.text = UserDataService.instance.name;
-        email.text = UserDataService.instance.email;
-        profileImg.image = UIImage(named: UserDataService.instance.avatarName)
-        let closeTouch = UITapGestureRecognizer(target: self, action: #selector(ProfileVC.closeTap(_:)))
-        bgView.addGestureRecognizer(closeTouch);
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func logoutPressed(_ sender: Any) {
         UserDataService.instance.logoutUser();
@@ -42,6 +28,23 @@ class ProfileVC: UIViewController {
     @IBAction func closeModalPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    //overrride functions
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        username.text = UserDataService.instance.name;
+        email.text = UserDataService.instance.email;
+        profileImg.image = UIImage(named: UserDataService.instance.avatarName)
+        let closeTouch = UITapGestureRecognizer(target: self, action: #selector(ProfileVC.closeTap(_:)))
+        bgView.addGestureRecognizer(closeTouch);
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    //objc functions
     
     @objc func closeTap(_ recognizer: UITapGestureRecognizer){
         self.dismiss(animated: true, completion: nil)
